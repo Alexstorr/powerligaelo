@@ -4,7 +4,7 @@ import re
 import pandas as pd
 import os
 
-api_key = SOME_SECRET
+api_key = os.environ["SOME_SECRET"]
 
 r=requests.get("https://liga.dust2.dk/hold/?hold=61239a41191993590c361e9d")
 soup=BeautifulSoup(r.text, "html.parser")
