@@ -59,5 +59,13 @@ for i in range(n):
     if (i+1) % 5 == 0:
         team += 1
 df = pd.DataFrame(dic)
-os.remove("dic.csv")
-df.to_csv("dic.csv")
+try:
+    os.remove(f"dic{30 - i}")
+except:
+    pass
+for i in range(0,30):
+        try:
+            os.rename(f"dic{29-i}",f"dic{30-i}")
+        except:
+            pass
+df.to_csv("dic0.csv")
