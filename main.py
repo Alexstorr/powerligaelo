@@ -60,7 +60,7 @@ for i in range(n):
         team += 1
 df = pd.DataFrame(dic)
 try:
-    os.remove(f"dic{30 - i}")
+    os.remove("dic30.csv")
 except:
     pass
 for i in range(0,30):
