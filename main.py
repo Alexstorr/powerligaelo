@@ -61,11 +61,12 @@ for i in range(n):
 df = pd.DataFrame(dic)
 try:
     os.remove("dic30.csv")
-except:
+except FileNotFoundError:
     pass
-for i in range(0,30):
-        try:
-            os.rename(f"dic{29-i}",f"dic{30-i}")
-        except:
-            pass
+
+for i in range(29, -1, -1):
+    try:
+        os.rename(f"dic{i}", f"dic{i+1}")
+    except FileNotFoundError:
+        pass
 df.to_csv("dic0.csv")
