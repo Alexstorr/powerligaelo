@@ -68,5 +68,5 @@ for i in range(29, -1, -1):
     try:
         os.rename(f"dic{i}", f"dic{i+1}")
     except FileNotFoundError:
-        pass
+        print(f"Failed to rename {i}")
 df.to_csv("dic0.csv")
