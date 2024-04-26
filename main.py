@@ -66,7 +66,7 @@ except FileNotFoundError:
 
 for i in range(29, -1, -1):
     try:
-        os.rename(f"dic{i}", f"dic{i+1}")
+        os.rename(f"dic{i}.csv", f"dic{i+1}.csv")
     except FileNotFoundError:
-        print(f"Failed to rename {i}")
+       pass
 df.to_csv("dic0.csv")
